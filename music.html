@@ -1,0 +1,73 @@
+<body>
+<header class="navbar">
+  <div class="nav-left">My Portfolio</div>
+  <nav class="nav-right">
+    <a href="index.html" target="_self">Home</a>
+    <a href="work.html" target="_self">Work</a>
+    <a href="music.html" target="_self">Music</a>
+    <a href="rides.html" target="_self">Motorcycle</a>
+  </nav>
+</header>
+  <div class="container">
+    <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Music</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+    <h1>🎵 My Music Journey</h1>
+    <p>Music is my creative escape. I post my guitar covers and originals on Instagram.</p>
+
+    <!-- Slideshow -->
+    <div class="media-container"> 
+    <div class="carousel">
+  <div class="carousel-track">
+    <img src="images/slide1.JPG" alt="Performance 1" />
+    <img src="images/slide2.JPG" alt="Performance 2" />
+    <img src="images/slide3.JPG" alt="Performance 3" />
+  </div>
+</div>
+</div>
+
+    <!-- Video Montage -->
+    <div class="video-wrapper">
+      <video autoplay muted loop class="music-video">
+        <source src="videos/izhukudhadi.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+<div class="social-badges">
+  <a href="https://instagram.com/sharathramesh_live" target="_blank" rel="noopener" class="social-badge">
+    <img src="instagramdark.png" alt="Instagram" />
+  </a>
+  <a href="https://youtube.com/@sharathramesh1761" target="_blank" rel="noopener" class="social-badge">
+    <img src="youtube.png" alt="YouTube" />
+  </a>
+</div>
+
+  <script>
+   const track = document.querySelector('.carousel-track');
+const slides = Array.from(track.children);
+const slideWidth = slides[0].getBoundingClientRect().width;
+
+let currentIndex = 0;
+
+function moveToSlide(index) {
+  track.style.transform = `translateX(-${slideWidth * index}px)`;
+}
+
+function autoSlide() {
+  currentIndex++;
+  if (currentIndex >= slides.length) currentIndex = 0;
+  moveToSlide(currentIndex);
+}
+
+setInterval(autoSlide, 3000); // slide every 3 seconds
+
+// Initialize
+moveToSlide(currentIndex);
+
+  </script>
+</body>
